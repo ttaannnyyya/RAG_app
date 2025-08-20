@@ -1,50 +1,9 @@
-# import streamlit as st
-# from langchain_helper import get_qa_chain
 
-# st.title(" NullClass’s Smart Assistant 🤖")
-# btn = st.button("Exit Chat")
-# # if btn:
-# #     create_vector_db()
-
-# question = st.text_input("Question: ")
-
-# if question:
-#     chain = get_qa_chain()
-#     response = chain(question)
-
-#     st.header("Answer")
-#     st.write(response["result"])
-
-# if btn:
-#     st.subheader("Please let us know:")
-#     resolved = st.radio("Was your issue resolved?", ("Yes", "No"))
-
-#     btnn = st.button("Submit")
-#     if btnn:
-#         if resolved == "Yes":
-#           feedback = st.write("We’re glad to hear that!")
-        
-#         else:
-#           email = st.text_input("We’re sorry! Please share your email so we can follow up:")
-#           if st.button("Submit Email"):
-#             if email.strip():
-#                 st.success("Thank you! Our team will contact you soon. 📩")
-#                 #myemailfunction(email.strip())  # call your function here
-#             else:
-#                 st.error("Please enter a valid email.")
 import streamlit as st
 from langchain_helper import get_qa_chain , send_mail
 
 st.title("NullClass’s Smart Assistant 🤖")
 
-# --- Q&A flow (unchanged) ---
-# question = st.text_input("Question:", key="question_input")
-
-# if question:
-#     chain = get_qa_chain()
-#     response = chain(question)   # keep using your existing chain call
-#     st.header("Answer")
-#     st.write(response["result"])
 # Initialize chat history list in session state
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
@@ -108,3 +67,4 @@ if st.session_state.show_feedback:
                 st.session_state.show_feedback = False
             else:
                 st.error("Please enter a valid email.")
+
