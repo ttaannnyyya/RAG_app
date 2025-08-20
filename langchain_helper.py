@@ -42,7 +42,7 @@ def send_mail(user_email: str):
 
     gmail_tool = GmailSendMessage(api_resource=service)
 
-    office_support_email = "xyz@gmail.com"  # replace with your office support email
+    office_support_email = "xyz@gmail.com"  # confidential office support email
     subject = "Customer Support Request"
     message = f"Please contact {user_email} for support."
 
@@ -134,6 +134,7 @@ if __name__ == "__main__":
     chain = get_qa_chain()
     response = chain({"question": "hello?"})
     print(response)
+
 
 
 
